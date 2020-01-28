@@ -20,7 +20,7 @@ class TestCases(unittest.TestCase):
     def test_cartesiano_polar(self):
         self.assertEqual(CalculadoraComplejos.cartesiano_polar(numero2),(12.806248474865697, -38.659808254090095))
     def test_fase(self):
-        self.assertEqual(CalculadoraComplejos.fase(numero1),(-59.03624346792648))
+        self.assertEqual(CalculadoraComplejos.fase(numero1),(2.1112158270654806))
 if __name__ == "__main__":
     unittest.main()
                  
