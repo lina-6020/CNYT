@@ -49,6 +49,5 @@ def cartesiano_polar(numero2):
     angulor=angulo*(180/math.pi)
     return r,angulor
 def fase(numero1):
-    fase=math.atan(numero1[1]/numero1[0])
-    faseg=fase*(180/math.pi)
-    return faseg()
+    fase=math.atan2(numero1[1],numero1[0])
+    return fase
