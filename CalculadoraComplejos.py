@@ -39,15 +39,15 @@ def dividir(numero1,numero2):
 
 def polar_cartesiano(numero1):
     r=numero1[0]
-    anguloradianes=numero1[1]*(math.pi/180)
-    x=r*math.cos(anguloradianes)
-    y=r*math.sin(anguloradianes)
+    angulo=numero1[1]*(math.pi/180)
+    x=r*math.cos(angulo)
+    y=r*math.sin(angulo)
     return x,y
-def cartesiano_polar(numero2):
-    r=(numero2[0]**2+numero2[1]**2)**0.5
-    angulo=math.atan(numero2[1]/numero2[0])
-    angulor=angulo*(180/math.pi)
-    return r,angulor
+    
+def cartesiano_polar(numero1):
+    r=((numero1[0]**2)+(numero1[1]**2))**0.5
+    angulo=math.atan2(numero1[1],numero1[0])
+    return r,(angulo*(180/math.pi))
 def fase(numero1):
     fase=math.atan2(numero1[1],numero1[0])
     return fase
