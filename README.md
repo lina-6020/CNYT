@@ -18,5 +18,5 @@ En el archivo se encontraran 9 funciones entre números complejos , cada funció
 * Polar_Cartesiano: Recibe como argumento una tupla con un número complejo y retorna una tupla con el resultado de la conversion, la tupla correspondiente a las coordenadas "x" y "y".
 * Cartesiano_polar: Recibe como argumento una tupla con un número complejo y retorna una tupla con el resultado de la conversion, la tupla correspondiente a "r" y "angulo" , (angulo en grados).
 * Fase: Recibe como argumento una tupla con un número complejo y retorna un número real correspondiente a la fase del número complejo..
-#Autor
+# Autor
 Lina Buitrago
