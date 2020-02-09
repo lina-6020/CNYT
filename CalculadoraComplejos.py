@@ -16,7 +16,7 @@ def multiplicar(numero1,numero2):
     f=a+d*-1
     return f,e
 def conjugado(numero1):
-    return numero1[0]*-1,numero1[1]*-1
+    return numero1[0],numero1[1]*-1
 def modulo(numero1):
     return (numero1[0]**2+numero1[1]**2)**0.5
 def dividir(numero1,numero2):
@@ -51,3 +51,161 @@ def cartesiano_polar(numero1):
 def fase(numero1):
     fase=math.atan2(numero1[1],numero1[0])
     return fase
+
+def sumavector(vector1,vector2):
+    vectorfinal=[]
+    if len(vector1)==len(vector2):
+        for i in range (len(vector1)):
+            vectorfinal.append(sumar(vector1[i],vector2[i]))
+    return vectorfinal
+def inversovector(vector1):
+    vectorfinal=[]
+    for i in range (len(vector1)):
+        vectorfinal.append(conjugado(vector1[i]))
+    return vectorfinal
+def producto_vectores(vector1,vector2):
+    resultado = (0,0) 
+    for i in range(len(vector1)):
+        resultado = sumar(resultado,multiplicar(vector1[i],vector2[i]))
+    return resultado
+def producto_interno(vector1,vector2):
+    return producto_vectores((conjugada_vector(vector1)),vector2)
+def escalar_vector(numero,vector1):
+    operacion=[]
+    for i in vector1:
+        resultado=multiplicar(numero,i)
+        operacion.append(resultado)
+    return operacion
+def adicion_matrices(matriz1,matriz2):
+    if len(matriz1)!=len(matriz2) or len(matriz1[0])!=len(matriz2):
+        print("La suma no esta definida para matrices de diferente tamaño")
+    else:
+        resultado=[]
+        for i in range (len(matriz1)):
+            operacion=[]
+            for j in range (len(matriz2)):
+                operacion.append(sumar(matriz1[i][j],matriz2[i][j]))
+            resultado.append(operacion)
+        return resultado
+def matriz_inversa(matriz1):
+    resultado=[]
+    for i in range (len(matriz1)):
+        resultado.append(inversovector(matriz1[i]))
+    return resultado
+def escalar_matriz(numero,matriz1):
+    resultado=[]
+    for i in range (len(matriz1)):
+        operacion=[]
+        for j in range (len(matriz1)):
+            operacion.append(multiplicar(numero,matriz1[i][j]))
+        resultado.append(operacion)
+    return resultado
+def transpuesta_matriz(matriz1):
+    matriz=[0]*len(matriz1[0])
+    for i in range(len(matriz1)):
+        matriz[i]=[0]*len(matriz1)
+        for j in range(len(matriz1[i])):    
+            matriz[i][j]=matriz1[j][i]
+    return matriz
+def transpuesta_vector(vector1):
+   return vector1
+def conjugada_matriz(matriz1):
+    resultado=[]
+    for i in range (len(matriz1)):
+        operacion=[]
+        for j in range (len(matriz1)):
+            operacion.append(conjugado(matriz1[i][j]))
+        resultado.append(operacion)
+    return resultado
+
+def conjugada_vector(vector1):
+    resultado=[]
+    for i in vector1:
+        resultado.append(conjugado(i))
+    return resultado
+    
+def adjunta_matriz(matriz1):
+    return transpuesta_matriz(conjugada_matriz(matriz1))
+def adjunta_vector(vector1):
+    return conjugada_vector(vector1)
+def producto_matrices(matriz1,matriz2):
+    resultado = []
+    for i in range(len(matriz1)):
+       operacion = []
+       for j in range(len(matriz2[0])):
+           save = (0,0)
+           for k in range(len(matriz2)): 
+               save = sumar(multiplicar(matriz1[i][k],matriz2[k][j]),save)
+           operacion.append(save)
+       resultado.append(operacion)
+    return resultado
+##def accion(matriz1,vector1):
+
+
+##def norma_vector(vector1):
+##    resultado=[]
+##    for i in vector1:
+##        resultado.append(multiplicar(i,i))
+##    total=sumar(resultado[0],resultado[1])
+##        
+##        
+##    return total
+##def distancia_vectores(vector1,vector2):
+def matriz_unitaria(matriz1):
+    resultado = producto_matrices(matriz1,adjunta_matriz(matriz1)))
+    for i in range(len(matriz1)):
+        for j in range(len(matriz1[0])):
+            posicion = resultado[i][j]
+            if(i==j and (posicion[0]!=1 or posicion[1]!=0)):
+                return False
+            elif(i!=j and (posicion[0]!=0 or posicion[1]!=0)):
+                 return False
+    return True
+def matriz_hermitiana(matriz1):
+    for i in range(len(matriz1)):
+        for j in range(len(matriz1[0])):
+            if(matriz1[i][j]!=adjunta_matriz(matriz1)[i][j]):
+                return False
+    return True
+
+    
+def producto_tensor_vectores(vector1,vector2):
+    operacion=[]
+    for i in vector1:
+        numero=i
+        for j in vector2:
+            numero2=j
+            resultado=multiplicar(numero,numero2)
+            operacion.append(resultado)
+    return operacion
+    
+
+def producto_tensor_matrices(matriz1,matriz2):
+    operacion=[]
+    for i in range (len(matriz1)):
+        for j in range(len(matriz2)):
+            operacion.append(producto_tensor_vectores(matriz1[i],matriz2[j]))
+    return operacion
+
+def main():
+    numero=(2,2)
+    vector1=[[-2, 3], [4, -5]]
+    vector2=[[6, 7], [8, 9]]
+    matriz1=[[(2,3),(3,2)],[(3,1),(4,3)]]
+    matriz2=[[(1,1),(2,2)],[(3,3),(4,4)]]
+    sumavector(vector1,vector2)
+    inversovector(vector1)
+    producto_tensor_vectores(vector1,vector2)
+    producto_tensor_matrices(matriz1,matriz2)
+    escalar_vector(numero,vector1)
+    escalar_matriz(numero,matriz1)
+    transpuesta_matriz(matriz1)
+    conjugada_vector(vector1)
+    conjugada_matriz(matriz1)
+    adjunta_matriz(matriz1)
+    adjunta_vector(vector1)
+    matriz_inversa(matriz1)
+    producto_matrices(matriz1,matriz2)
+    norma_vector(vector1)
+    producto_interno(vector1,vector2))
+main()
