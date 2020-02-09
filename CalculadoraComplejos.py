@@ -139,20 +139,20 @@ def producto_matrices(matriz1,matriz2):
            operacion.append(save)
        resultado.append(operacion)
     return resultado
-##def accion(matriz1,vector1):
 
 
-##def norma_vector(vector1):
-##    resultado=[]
-##    for i in vector1:
-##        resultado.append(multiplicar(i,i))
-##    total=sumar(resultado[0],resultado[1])
-##        
-##        
-##    return total
-##def distancia_vectores(vector1,vector2):
+
+def norma_vector(vectorreal1):
+    resultado=0
+    for i in vectorreal1:
+        resultado=resultado+(i**2)
+    return ((resultado)**0.5)
+    
+def distancia_vectores(vectorreal1,vectorreal2):    
+    resultado=((vectorreal1[0]-vectorreal2[0])**2+(vectorreal1[1]-vectorreal2[1])**2)**0.5
+    return resultado        
 def matriz_unitaria(matriz1):
-    resultado = producto_matrices(matriz1,adjunta_matriz(matriz1)))
+    resultado = producto_matrices(matriz1,adjunta_matriz(matriz1))
     for i in range(len(matriz1)):
         for j in range(len(matriz1[0])):
             posicion = resultado[i][j]
@@ -187,25 +187,4 @@ def producto_tensor_matrices(matriz1,matriz2):
             operacion.append(producto_tensor_vectores(matriz1[i],matriz2[j]))
     return operacion
 
-def main():
-    numero=(2,2)
-    vector1=[[-2, 3], [4, -5]]
-    vector2=[[6, 7], [8, 9]]
-    matriz1=[[(2,3),(3,2)],[(3,1),(4,3)]]
-    matriz2=[[(1,1),(2,2)],[(3,3),(4,4)]]
-    sumavector(vector1,vector2)
-    inversovector(vector1)
-    producto_tensor_vectores(vector1,vector2)
-    producto_tensor_matrices(matriz1,matriz2)
-    escalar_vector(numero,vector1)
-    escalar_matriz(numero,matriz1)
-    transpuesta_matriz(matriz1)
-    conjugada_vector(vector1)
-    conjugada_matriz(matriz1)
-    adjunta_matriz(matriz1)
-    adjunta_vector(vector1)
-    matriz_inversa(matriz1)
-    producto_matrices(matriz1,matriz2)
-    norma_vector(vector1)
-    producto_interno(vector1,vector2))
-main()
+
