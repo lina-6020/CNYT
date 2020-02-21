@@ -8,7 +8,7 @@ En el encabezado del idle de python escribir la instrucción "importCalculadoraC
 y con esa instrucción ya se podran usar uso de todas las funciones con sus respectivos argumentos
 # Descripción
 En el archivo se encontraran 30 funciones entre números complejos,vectores complejos , vectores reales y matrices complejas cada función recibe como argumento una o dos tuplas(en caso de operaciones entre números complejos);  un arreglo de tuplas (en caso de tratarse de operaciones entre vectores complejos); un número real (en caso de operaciones entre vectores reales); matriz o matrices de tuplas (en caso de tratarse de operaciones entre matrices complejas); true o false (en caso de tratarse de verificaciones); todas las tuplas compuestas por una parte real y una parte imaginaria.
-# Funciones
+# Funciones con números complejos
 * **Sumar**: Recibe como argumento dos tuplas de números complejos y retorna una tupla con el resultado de la suma.
 * **Restar**: Recibe como argumento dos tuplas de números complejos y retorna una tupla con el resultado de la resta.
 * **Multiplicar**: Recibe como argumento dos tuplas de números complejos y retorna una tupla con el resultado de la multiplicación.
@@ -18,6 +18,7 @@ En el archivo se encontraran 30 funciones entre números complejos,vectores comp
 * **Polar_Cartesiano**: Recibe como argumento una tupla con un número complejo y retorna una tupla con el resultado de la conversion, la tupla correspondiente a las coordenadas "x" y "y".
 * **Cartesiano_polar**: Recibe como argumento una tupla con un número complejo y retorna una tupla con el resultado de la conversion, la tupla correspondiente a "r" y "angulo" , (angulo en grados).
 * **Fase**: Recibe como argumento una tupla con un número complejo y retorna un número real correspondiente a la fase del número complejo.
+# Funciones con vectores y matrices complejas
 * **Sumavector**:Recibe como argumentos dos vectores de números complejos y retorna un vector complejo correspondiente a su suma.
 * **Inversovector**: Recibe como argumento un vector complejo y retorna el inverso del vector.
 * **Producto_vectores**: Recibe como argumento dos vectores complejos y retorna un vector complejo correspondiente al producto entre ellos.
@@ -40,12 +41,13 @@ En el archivo se encontraran 30 funciones entre números complejos,vectores comp
 * **Producto_tensor_vectores**: Recibe como argumentos dos vectores complejos y retorna un vector correspondiente al tensor entre ellos.
 * **Producto_tensor_matrices**: Recibe como argumentos dos matrices complejas y retorna una matriz correspondiente al tensor entre ellas.
 
-
-
-
-
-
+#Pruebas
+La librearía tiene un archivo .py donde puede probar todos los posibles casos para cada funcion con diferentes valores , lo puede hacer ingresando al archivo editando los numeros y correrlas con F5 , al final obtendra el numero de test que estuvieron bien.
 
 
 # Autor
 Lina Buitrago
+
+Estudiante de Ingeniería de Sistemas
+
+Escuela Colombiana de Ingeniería Julio Garavito
