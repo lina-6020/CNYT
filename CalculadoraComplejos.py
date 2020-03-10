@@ -139,14 +139,18 @@ def producto_matrices(matriz1,matriz2):
            operacion.append(save)
        resultado.append(operacion)
     return resultado
+def norma(numero1):
+    return (numero1[0]**2+numero1[1]**2)
 
 
 
 def norma_vector(vectorreal1):
     resultado=0
     for i in vectorreal1:
-        resultado=resultado+(i**2)
-    return ((resultado)**0.5)
+        resultado=resultado+norma(i)
+    return resultado
+
+
     
 def distancia_vectores(vectorreal1,vectorreal2):    
     resultado=((vectorreal1[0]-vectorreal2[0])**2+(vectorreal1[1]-vectorreal2[1])**2)**0.5
@@ -186,5 +190,21 @@ def producto_tensor_matrices(matriz1,matriz2):
         for j in range(len(matriz2)):
             operacion.append(producto_tensor_vectores(matriz1[i],matriz2[j]))
     return operacion
-
+def vectorxmatriz(vector,matriz):
+    ans=[]
+    for i in range(len(matriz)):
+        and.append(producto_vectores(vector,matriz[i]))
+    return ans
+def probabilidad (pos,vector):
+    print(vector)
+    a= norma(vector[pos])
+    b=norma_vector(vector)
+    prob=(a/b)
+    respuesta=prob*100
+    return respuesta
+def main():
+    vector=[[2,1], [-1,2], [0,1], [1,0], [3,-1], [2,0], [0,-2], [-2,1], [1,-3], [0,-1]]
+    pos=7
+    print(probabilidad(pos,vector))
+main()
 
