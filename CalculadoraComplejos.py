@@ -193,8 +193,10 @@ def producto_tensor_matrices(matriz1,matriz2):
 def vectorxmatriz(vector,matriz):
     ans=[]
     for i in range(len(matriz)):
-        and.append(producto_vectores(vector,matriz[i]))
+        ans.append(producto_vectores(vector,matriz[i]))
     return ans
+"Sistema cuántico de partícula en una linea"
+
 def probabilidad (pos,vector):
     print(vector)
     a= norma(vector[pos])
@@ -202,6 +204,11 @@ def probabilidad (pos,vector):
     prob=(a/b)
     respuesta=prob*100
     return respuesta
+def amplitudTransicion(matriz,vector):
+    a = vectorxmatriz(vector,matriz)
+    conjugado = inversovector(a)
+    ans = producto_vectores(conjugado,vector)
+    return ans 
 def main():
     vector=[[2,1], [-1,2], [0,1], [1,0], [3,-1], [2,0], [0,-2], [-2,1], [1,-3], [0,-1]]
     pos=7
