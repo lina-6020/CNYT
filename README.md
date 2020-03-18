@@ -1,7 +1,7 @@
 # CNYT
 Ciencias Naturales y Tecnología
 # Librería de Numeros Complejos
-# Prerequisitos
+# Prerrequisitos
 La libreria puede ser importada en python 3.6 
 # Instrucciones
 En el encabezado del idle de python escribir la instrucción "importCalculadoraComplejos"
@@ -40,7 +40,9 @@ En el archivo se encontraran 30 funciones entre números complejos,vectores comp
 * **Matriz_hermitiana**: Recibe como argumento una matriz y retorna "True" si la matriz es hermitiana o "false" si la matriz no es hermitiana.
 * **Producto_tensor_vectores**: Recibe como argumentos dos vectores complejos y retorna un vector correspondiente al tensor entre ellos.
 * **Producto_tensor_matrices**: Recibe como argumentos dos matrices complejas y retorna una matriz correspondiente al tensor entre ellas.
-
+# Funciones para sistemas 
+* **Probabilidad**: Calcula la posibilidad de encontrar una particula en cierta posicion.
+* **AmplitudTransicion**: Calcula la amplitud de transicion entre dos estados.
 #Pruebas
 La librearía tiene un archivo .py donde puede probar todos los posibles casos para cada funcion con diferentes valores , lo puede hacer ingresando al archivo editando los numeros y correrlas con F5 , al final obtendra el numero de test que estuvieron bien.
 
