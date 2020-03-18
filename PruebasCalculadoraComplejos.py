@@ -69,7 +69,10 @@ class TestCases(unittest.TestCase):
         self.assertEqual(CalculadoraComplejos.producto_tensor_vectores(vector1,vector2),([(-33, 4), (-43, 6), (59, -2), (77, -4)]))
     def test_producto_tensor_matrices(self):
         self.assertEqual(CalculadoraComplejos.producto_tensor_matrices(matriz1,matriz2),([[(-1, 5), (-2, 10), (1, 5), (2, 10)], [(-3, 15), (-4, 20), (3, 15), (4, 20)], [(2, 4), (4, 8), (1, 7), (2, 14)], [(6, 12), (8, 16), (3, 21), (4, 28)]]))
-                         
+    def test_probabilidad(self):
+        self.assertEqual(CalculadoraComplejos.probabilidad(pos,vector),(20))
+    def test_amplitudTransicion(self):
+        self.assertEqual(CalculadoraComplejos.amplitudTransicion(matrizamplitud,vectoramplitud),((1.4999999999999996,0.0)))                     
 if __name__ == "__main__":
     unittest.main()
             
